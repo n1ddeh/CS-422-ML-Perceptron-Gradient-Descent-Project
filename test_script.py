@@ -44,7 +44,6 @@ X,Y = load_data("data_1.txt")
 test_acc = p.perceptron_test(X,Y,w,b)
 print("Perceptron:",test_acc)
 
-
 def df_test1(x):
   return np.array([2*x[0]])
 
