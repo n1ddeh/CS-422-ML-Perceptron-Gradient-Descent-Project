@@ -1,13 +1,10 @@
 import math
 import numpy as np
 def gradient_descent(f, x, n):
-	prev_x = 0
-	while (True):
-		prev_x = x
-		g = f(x)
+	g = f(x)
+	while magnitude(g) > 0.0001:
 		x = x - n*g
-		if (magnitude(x) < 0.0001): # the steps become very small
-			break;
+		g = f(x)
 	return x
 
 def magnitude(x):
@@ -15,4 +12,3 @@ def magnitude(x):
 	for i in x:
 		y = y + i*i
 	return math.sqrt(y)
-	
