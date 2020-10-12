@@ -1,5 +1,4 @@
 import math
-import numpy as np
 def gradient_descent(f, x, n):
 	g = f(x)
 	while magnitude(g) > 0.0001:

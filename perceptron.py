@@ -15,7 +15,7 @@ def perceptron_train(X, Y):
                 update = 1
     return w, b
         
-def calc_activation(W, X, B):
+def calc_activation(W, X, B)
     if (np.size(X) != np.size(W)):
         print("Incorrect dimensions")
         return
