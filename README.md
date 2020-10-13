@@ -1,2 +1,11 @@
 # CS-422-ML-Perceptron-Gradient-Descent-Project
-Project 2 for my machine learning class at UNR.
+PROJECT [2]
+MARK MINKOFF
+
+The purpose of this project was to develop algorithms for the perceptron and gradient descent. Perceptrons take in training data and builds weights and biases. Gradient descent takes in the gradient of a loss function and attempts to find a local minimum.
+
+In perceptron_train(X, Y), 'X' is the training data and 'Y' is the corresponding output of that data. We initialize weights by creating a numpy array that has the size of the number of colums in 'X' and filling that array to zero. The bias is a single number initalized to zero. Our perceptron algorithm is simple. We iterate through each row of 'X' and calculate the activation of that row. Activation is calculated by the summation of weights multiplied by training data and summed again by bias. If the activation multipled by the corresponding output label in 'Y' is less than or equal to zero, then we update the weights and bias. Each weight is updated by the summation of iteslef and the corresponding output label in 'Y' multipled by the correpsonding training data. Bias is summmed by itself and the output label. Our algorithm ends when we don't update weights or bias through an entire epoch of the training data.
+
+In perceptron_test(X_test, Y_test, w, b), we take in the training data, output labels, weights, and bias. The algorithm iterates through each row of the training data once and checks if the activation multiplied by the corresponding output label in 'Y' is greater than 0. When it is we know that the training data for that row is correct and we increment our accuracy by one. When it is not correct we don't increment the accuracy. We then return our total accuracy divided by the number of rows in the training data to get the average number of correct training labels.
+
+In gradient_descent(f, x, n), we take the gradient of a loss function, a starting point of that function (x), and the learning rate (n). We calculate the gradient by taking f(x). We then check if the magnitude of that gradient is greater than 0.001. If it is we apply recurssion by calling gradient descent on the same function and learning rate, but we take a step down the gradient where x = x - n*g. When the magnitude of our gradient becomes smaller than 0.001, our steps become inconsequential and we can safely say that we've found a local minimum.
